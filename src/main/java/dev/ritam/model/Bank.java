@@ -36,12 +36,8 @@ public class Bank {
     }
 
     void withdraw(int amount) {
-        if (amount <= balance) {
-            balance -= amount;
-            System.out.printf("\nYou have successfully withdrawn %d.", amount);
-        } else {
-            System.out.println("Insufficient Fund");
-        }
+        balance -= amount;
+        System.out.printf("\nYou have successfully withdrawn %d.", amount);
     }
 
     void deposit(int amount) {
@@ -49,12 +45,8 @@ public class Bank {
         System.out.printf("\nYour balance is %d", amount);
     }
 
-    void changePin(int oldPin, int newPin) {
-        if (oldPin != pinCode) {
-            throw new RuntimeException();
-        } else {
-            pinCode = newPin;
-        }
+    void changePin(int newPin) {
+        pinCode = newPin;
     }
 
     void showBalance() {
