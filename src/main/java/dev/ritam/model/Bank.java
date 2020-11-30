@@ -35,21 +35,21 @@ public class Bank {
         this.tempPin = tempPin;
     }
 
-    void withdraw(int amount) {
+    public void withdraw(int amount) {
         balance -= amount;
         System.out.printf("\nYou have successfully withdrawn %d.", amount);
     }
 
-    void deposit(int amount) {
+    public void deposit(int amount) {
         balance += amount;
         System.out.printf("\nYour balance is %d", amount);
     }
 
-    void changePin(int newPin) {
+    public void changePin(int newPin) {
         pinCode = newPin;
     }
 
-    void showBalance() {
+    public void showBalance() {
         System.out.printf("\nYour balance is %d", balance);
     }
 }
