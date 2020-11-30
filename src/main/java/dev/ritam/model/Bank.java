@@ -1,5 +1,9 @@
 package dev.ritam.model;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Bank {
     private int pinCode;
     private int balance;
@@ -9,6 +13,7 @@ public class Bank {
         return pinCode;
     }
 
+    @Value("6789")
     public void setPinCode(int pinCode) {
         this.pinCode = pinCode;
     }
@@ -17,6 +22,7 @@ public class Bank {
         return balance;
     }
 
+    @Value("10000")
     public void setBalance(int balance) {
         this.balance = balance;
     }
