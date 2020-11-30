@@ -2,10 +2,10 @@ package dev.ritam.aspect;
 
 import dev.ritam.model.Bank;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -35,10 +35,7 @@ public class BankAspect {
         return object;
     }
 
-    @Before("execution(public void dev.ritam.model.Bank.withdraw(..)) || " +
-            "execution(public void dev.ritam.model.Bank.deposit(..)) || " +
-            "execution(public void dev.ritam.model.Bank.changePin(..)) || " +
-            "execution(public void dev.ritam.model.Bank.showBalance(..))")
+    @After("execution(public void dev.ritam.model.Bank.setTempPin(..))")
     public void validatePin() {
         if (bank.getPinCode() != bank.getTempPin()) {
             throw new RuntimeException("Wrong Pin");
