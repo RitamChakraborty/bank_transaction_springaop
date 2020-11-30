@@ -37,12 +37,12 @@ public class Bank {
 
     public void withdraw(int amount) {
         balance -= amount;
-        System.out.printf("\nYou have successfully withdrawn %d.", amount);
+        System.out.printf("You have successfully withdrawn %d.\n", amount);
     }
 
     public void deposit(int amount) {
         balance += amount;
-        System.out.printf("\nYour balance is %d", amount);
+        System.out.printf("Your balance is %d.\n", balance);
     }
 
     public void changePin(int newPin) {
@@ -50,6 +50,6 @@ public class Bank {
     }
 
     public void showBalance() {
-        System.out.printf("\nYour balance is %d", balance);
+        System.out.printf("Your balance is %d\n", balance);
     }
 }
