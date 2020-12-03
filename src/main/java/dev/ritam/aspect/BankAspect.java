@@ -44,7 +44,7 @@ public class BankAspect {
         }
     }
 
-    @AfterThrowing(value = "within(dev.ritam.aspect.BankAspect)", throwing = "e")
+    @AfterThrowing(value = "execution(public void dev.ritam.model.Bank.setTempPin(..))", throwing = "e")
     public void logException(Exception e) {
         System.out.println(e.getMessage());
     }
